@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA Explorer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="badge">Projeto com FastAPI e NASA</span>
+      <h1>NASA Explorer</h1>
+      <p>Um site para explorar imagens e informações públicas da NASA de um jeito simples e direto.</p>
+      <a href="/docs" target="_blank" class="docs-button">Ver documentação da API</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="card destaque">
+      <div class="card-top">
+        <div>
+          <h2>Imagem astronômica do dia</h2>
+          <p>A NASA publica todos os dias uma imagem ou vídeo com uma explicação sobre o espaço.</p>
+        </div>
+        <button onclick="buscarApod()">Atualizar</button>
+      </div>
+      <div id="apod"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-top">
+        <div>
+          <h2>Imagens de Marte</h2>
+          <p>Veja imagens relacionadas a Marte, seus rovers, paisagens e superfície.</p>
+        </div>
+      </div>
+
+      <div class="form-area">
+        <select id="categoria-marte">
+          <option value="">Carregando categorias...</option>
+        </select>
+
+        <input type="number" id="limite-marte" value="6" min="1" max="12">
+        <button onclick="buscarMarte()">Buscar imagens</button>
+      </div>
+
+      <div id="marte"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-top">
+        <div>
+          <h2>Asteroides próximos da Terra</h2>
+          <p>Consulte objetos próximos da Terra de hoje, dos próximos dias ou da semana.</p>
+        </div>
+      </div>
+
+      <div class="form-area">
+        <select id="periodo-asteroide">
+          <option value="hoje">Hoje</option>
+          <option value="3dias">Próximos 3 dias</option>
+          <option value="7dias">Próxima semana</option>
+        </select>
+
+        <button onclick="buscarAsteroides()">Buscar asteroides</button>
+      </div>
+
+      <div id="asteroides"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-top">
+        <div>
+          <h2>Catálogo de asteroides</h2>
+          <p>Uma lista de objetos monitorados pela NASA, com magnitude e indicação de risco.</p>
+        </div>
+      </div>
+
+      <div class="form-area">
+        <button onclick="buscarCatalogoAsteroides()">Carregar catálogo</button>
+      </div>
+
+      <div id="catalogo-asteroides"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-top">
+        <div>
+          <h2>Imagens da Terra</h2>
+          <p>Registros da Terra vistos do espaço pela câmera EPIC.</p>
+        </div>
+      </div>
+
+      <div class="form-area">
+        <input type="number" id="limite-epic" value="6" min="1" max="12">
+        <button onclick="buscarEpic()">Buscar imagens</button>
+      </div>
+
+      <div id="epic"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-top">
+        <div>
+          <h2>Biblioteca de imagens</h2>
+          <p>Pesquise imagens da NASA por tema, como Lua, galáxias, planetas e missões espaciais.</p>
+        </div>
+      </div>
+
+      <div class="form-area">
+        <select id="categoria-imagens">
+          <option value="moon">Lua</option>
+          <option value="mars">Marte</option>
+          <option value="earth">Terra</option>
+          <option value="galaxy">Galáxia</option>
+          <option value="nebula">Nebulosa</option>
+          <option value="apollo">Apollo</option>
+          <option value="jupiter">Júpiter</option>
+          <option value="saturn">Saturno</option>
+        </select>
+
+        <input type="number" id="limite-imagens" value="6" min="1" max="12">
+        <button onclick="buscarImagens()">Pesquisar</button>
+      </div>
+
+      <div id="imagens"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-top">
+        <div>
+          <h2>Clima espacial</h2>
+          <p>Registros de atividade solar acompanhados pela NASA, como erupções solares.</p>
+        </div>
+      </div>
+
+      <div class="form-area">
+        <button onclick="buscarClimaEspacial()">Buscar eventos solares</button>
+      </div>
+
+      <div id="clima-espacial"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-top">
+        <div>
+          <h2>Eventos naturais</h2>
+          <p>Veja registros de fenômenos naturais acompanhados pela NASA, como queimadas, tempestades e erupções.</p>
+        </div>
+      </div>
+
+      <div class="form-area">
+        <input type="number" id="limite-eventos" value="6" min="1" max="12">
+        <button onclick="buscarEventos()">Buscar eventos</button>
+      </div>
+
+      <div id="eventos"></div>
+    </section>
+  </main>
+</body>
+</html>
